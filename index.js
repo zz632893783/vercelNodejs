@@ -24,7 +24,7 @@ const requestPage = targetURL => axios.get(targetURL).then(response => {
     }
 }).catch(error => console.error('Error:', error));
 
-app.get('/spider-page', async (request, response) => {
+app.get('/', async (request, response) => {
 	const [meetList, normalList] = await requestPage('http://10.10.120.211:30819/brain/topic/indexStand/getIndexStandardsHtml');
     res.setHeader('Content-Type', 'text/html');
     const renderHtmlStr = `
