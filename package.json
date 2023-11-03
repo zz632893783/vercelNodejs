@@ -18,6 +18,8 @@
   "homepage": "https://github.com/zz632893783/vercelNodejs#readme",
   "description": "",
   "devDependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
     "express": "^4.18.2"
   }
 }
