@@ -1,0 +1,20 @@
+{
+  "name": "vercelnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zz632893783/vercelNodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zz632893783/vercelNodejs/issues"
+  },
+  "homepage": "https://github.com/zz632893783/vercelNodejs#readme"
+}
