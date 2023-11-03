@@ -1,30 +1,30 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
-const http = require('http');
+// const axios = require('axios');
+// const cheerio = require('cheerio');
+// const http = require('http');
 const express = require('express');
 
 const port = process.env.PORT || 4000;
 const app = express();
 
-const requestPage = targetURL => axios.get(targetURL).then(response => {
-    if (response.status === 200) {
-        const htmlText = response.data;
-        const $ = cheerio.load(htmlText);
-        const meetList = [];
-        const normalList = [];
-        $('.collapsible-button').each((index, element) => {
-            const name = $(element).text();
-            const content = $(element).nextAll('.collapsible-content');
-            (name.match(/会议版/) ? meetList : normalList).push({
-                title: name,
-                content: content.html()
-            });
-        });
-        return [meetList, normalList]
-    }
-}).catch(error => console.error('Error:', error));
+// const requestPage = targetURL => axios.get(targetURL).then(response => {
+//     if (response.status === 200) {
+//         const htmlText = response.data;
+//         const $ = cheerio.load(htmlText);
+//         const meetList = [];
+//         const normalList = [];
+//         $('.collapsible-button').each((index, element) => {
+//             const name = $(element).text();
+//             const content = $(element).nextAll('.collapsible-content');
+//             (name.match(/会议版/) ? meetList : normalList).push({
+//                 title: name,
+//                 content: content.html()
+//             });
+//         });
+//         return [meetList, normalList]
+//     }
+// }).catch(error => console.error('Error:', error));
 
-app.get('/spider', async (request, response) => {
+app.get('/spider-page', async (request, response) => {
 // 	const [meetList, normalList] = await requestPage('http://10.10.120.211:30819/brain/topic/indexStand/getIndexStandardsHtml');
 //     res.setHeader('Content-Type', 'text/html');
 //     const renderHtmlStr = `
@@ -132,7 +132,7 @@ app.get('/spider', async (request, response) => {
 //     `;
     // res.write(renderHtmlStr);
     // res.end();
-	response.send(1223123);
+	response.send('spider-page');
 });
 
 app.listen(port, () => {
