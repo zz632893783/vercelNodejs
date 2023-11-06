@@ -30,7 +30,7 @@ app.get('/', async (request, response) => {
 	console.log(1);
 	const [meetList, normalList] = await requestPage('http://10.10.120.211:30819/brain/topic/indexStand/getIndexStandardsHtml');
 	console.log(2);
-    res.setHeader('Content-Type', 'text/html');
+    response.setHeader('Content-Type', 'text/html');
     const renderHtmlStr = `
         <html>
             <head>
